@@ -1,18 +1,20 @@
+
 namespace ConsoleApp2;
 
 public class Kontener
 {
-    private float _masaLadunku { get; set; }
-    private float _wysokosc { get; set; }
-    
-    //samego kontenera
-    private float _wagaWlasna { get; set; }
-    private float _glebokosc { get; set; }
-    private String _nrSeryjny { get; set; }
-    
-    private float _ladownosc { get; set; }
+    private float _masaLadunku;
+    private float _wysokosc;
 
-    private static int i;
+
+    private float _wagaWlasna;
+    private float _glebokosc;
+    private String _nrSeryjny;
+
+    private float _ladownosc;
+
+
+    public static int i;
     
     
 
@@ -23,16 +25,16 @@ public class Kontener
         _wagaWlasna = wagaWlasna;
         _glebokosc = glebokosc;
         _ladownosc = ladownosc;
-        i++;
         _nrSeryjny = generujNrSeryjny();
+        
     }
 
-    public virtual void oproznijLadunek()
+    public virtual void oproznijKontener()
     {
         _masaLadunku = 0;
     }
 
-    public virtual void zaladuj(float masaLadowana)
+    public virtual void zaladujKontener(float masaLadowana)
     {
         if (_masaLadunku+masaLadowana > _ladownosc)
         {
@@ -46,12 +48,9 @@ public class Kontener
     }
 
 
-
-
-
-    private String generujNrSeryjny()
+    public virtual String generujNrSeryjny()
     {
-        return "KON-C" + i;
+        return "KON"+"-" + "ABSTRACT" +"-" + i++;
 
 
     }
@@ -63,12 +62,43 @@ public class Kontener
                $"Masa ładunku: {_masaLadunku} kg, " +
                $"Wysokość: {_wysokosc} cm, " +
                $"Waga własna: {_wagaWlasna} kg, " +
-               $"Głębokość: {_glebokosc} cm";
+               $"Głębokość: {_glebokosc} cm, " +
+               $"Ładowność: {_ladownosc} kg, ";
     }
-    
-    
 
-    
-    
-    
+    public float MasaLadunku
+    {
+        get => _masaLadunku;
+        set => _masaLadunku = value;
+    }
+
+    public float Wysokosc
+    {
+        get => _wysokosc;
+        set => _wysokosc = value;
+    }
+
+    public float WagaWlasna
+    {
+        get => _wagaWlasna;
+        set => _wagaWlasna = value;
+    }
+
+    public float Glebokosc
+    {
+        get => _glebokosc;
+        set => _glebokosc = value;
+    }
+
+    public string NrSeryjny
+    {
+        get => _nrSeryjny;
+        set => _nrSeryjny = value;
+    }
+
+    public float Ladownosc
+    {
+        get => _ladownosc;
+        set => _ladownosc = value;
+    }
 }
