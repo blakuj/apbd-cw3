@@ -36,7 +36,7 @@ public class Kontener
     {
         if (_masaLadunku+masaLadowana > _ladownosc)
         {
-            Console.WriteLine("Nie mozna zaladowac tyle do kontenera");
+            throw new OverflowException("Chcesz zaladowac zbyt duzo");
         }
         else
         {

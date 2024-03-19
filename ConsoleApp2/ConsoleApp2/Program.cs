@@ -13,5 +13,5 @@ Console.WriteLine(kontener);
 Console.WriteLine(kontener2);
 
 kontener.oproznijLadunek();
-kontener.zaladuj(20);
+kontener.zaladuj(60);
 Console.WriteLine(kontener.ToString()); 
